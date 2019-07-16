@@ -1,6 +1,5 @@
 <?php
-session_start();
-include_once("php/classes/classIncluder.php");
+require_once("php/classes/classIncluder.php");
 if (isset($_POST['con_password']) && $_POST['con_email'] && $_POST['con_password'] !== NULL){
     $connUser = new User();
     $connUser->setEmail($_POST['con_email']);

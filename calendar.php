@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once "php/classes/classIncluder.php";
 if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
     //header("Location: planning.php");
     echo "Vous êtes bien connecté.";

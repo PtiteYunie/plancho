@@ -1,5 +1,5 @@
 <?php
-
+require_once "classIncluder.php";
 
 class Calendar
 {
@@ -16,14 +16,21 @@ class Calendar
     public function displayCalendar()
     {
         $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year);
-        echo $numberDays;
 
-        $row = "<table class=\"uk-table\">
+        $users=User::getAllUsers();
+
+
+        $row = "<table class=\"uk-table uk-table-divider\">
                     <caption></caption>
                         <thead>
                             <tr>
-                                <th>Date</th>
-                            </tr>
+                                <th>Date</th>";
+
+        foreach ($users as $user){
+            $row.="<th>".$user['username']."</th>";
+        }
+
+        $row.="             </tr>
                         </thead>
                         <tfoot>
                             <tr>
@@ -34,7 +41,11 @@ class Calendar
                             ";
 
         for ($i = 1; $i <= $numberDays; $i++) {
+            //Display first column
             $row .= "<tr><td>" . $i . "-" . $this->month . "-" . $this->year . "</td></tr>";
+
+            //Display others columns
+
         }
 
         $row .= "</tbody>
@@ -42,5 +53,7 @@ class Calendar
 
         echo $row;
     }
+
+
 
 }

@@ -136,4 +136,13 @@ class User
         }
     }
 
+    static function getAllUsers(){
+        $database = Database::getDatabaseConnection();
+
+        $getUsers = $database->prepare("SELECT * FROM user ");
+        $getUsers->execute();
+
+        return $getUsers->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

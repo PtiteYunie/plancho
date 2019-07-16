@@ -6,7 +6,7 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SES
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
                 <li uk-tooltip="title: Retournez à l'accueil"><a href="index.php">Accueil</a></li>
-                <li uk-tooltip="title: Accédez au planning"><a href="#">Planning</a></li>
+                <li uk-tooltip="title: Accédez au planning"><a href="planningMonth.php">Planning</a></li>
             </ul>
         </div>
         <div class="uk-navbar-right">

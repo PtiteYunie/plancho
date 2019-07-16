@@ -1,5 +1,7 @@
 <?php
 
+require_once("Database.php");
+
 class User
 {
     private $id;
@@ -86,7 +88,7 @@ class User
                     $user = new User($userExists['id'], $userExists['username'], $userExists['firstName'], $userExists['lastName'],
                         $userExists['email'], $userExists['password'], $userExists['phone'], $userExists['isAdm']);
                     $user->createSession();
-                    header("Location: planning.php");
+                    header("Location: index.php");
             //    }
              //   else{
                     echo 'L\'utilisateur n\'est pas validé, vérifiez vos mails pour pouvoir le valider.';

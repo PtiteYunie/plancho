@@ -35,13 +35,21 @@ class Planning
     public function getComment(){ return $this->comment; }
 
     // Fonction permettant de récupérer toutes les informations concernant le mois en cours
-    public function getMonthPlanning(){
+    static function getCurrentPlanning(){
         $database = Database::getDatabaseConnection();
         // 1 : On récupère toutes les informations par rapport au mois en cours - MONTH(CURDATE()) récupère cette info
-        $getMonth = $database->prepare("SELECT * FROM planning WHERE date = MONTH(CURDATE())");
+        $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) LIKE MONTH(CURDATE()) ORDER BY date ASC");
         $getMonth->execute();
 
-        var_dump($getMonth->fetch(PDO::FETCH_ASSOC));
+        return $getMonth->fetch(PDO::FETCH_ASSOC);
     }
 
+    static function getMonthPlanning($month){
+        $database = Database::getDatabaseConnection();
+        // 2 : Permets de récupérer le planning d'un mois choisi
+        $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) = ? ORDER BY date ASC");
+        $getMonth->execute(array($month));
+
+        return $getMonth->fetch(PDO::FETCH_ASSOC);
+    }
 }

@@ -1,18 +1,16 @@
 <?php
-/* Afficher le planning ici */
 require_once("php/classes/classIncluder.php");
 if (!isset($_SESSION) || $_SESSION['isConnected'] != true){
-    echo "Accès interdit";
+    echo "Vous n'êtes pas connecté.";
+    exit();
 }
-
-
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Planning - Plancho</title>
+    <title>Plancho - Planning</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/uikit.css" />
     <script src="js/uikit.js"></script>
@@ -20,18 +18,11 @@ if (!isset($_SESSION) || $_SESSION['isConnected'] != true){
 </head>
 
 <body>
-
 <?php
-$p = new Planning();
-$p->getMonthPlanning();
+$p = Planning::getCurrentPlanning();
+$g = Planning::getMonthPlanning(7);
+
+var_dump($g);
 ?>
-
-
-
-
-
-
 </body>
-<script src="js/planning.js">
-</script>
 </html>

@@ -17,20 +17,21 @@ class Calendar
     {
         $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year);
 
-        $users=User::getAllUsers();
+        $users = User::getAllUsers();
 
 
-        $row = "<table class=\"uk-table uk-table-divider\">
+        $row = "<table class=\"uk-table uk-table-divider table-bordered\">
                     <caption></caption>
                         <thead>
                             <tr>
                                 <th>Date</th>";
 
-        foreach ($users as $user){
-            $row.="<th>".$user['username']."</th>";
+        foreach ($users as $user) {
+            $row .= "<th>" . $user['username'] . "</th>";
         }
 
-        $row.="             </tr>
+
+        $row .= "             </tr>
                         </thead>
                         <tfoot>
                             <tr>
@@ -40,11 +41,40 @@ class Calendar
                         <tbody>
                             ";
 
+        /*
+         *
+         *
+         * <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+        */
+
         for ($i = 1; $i <= $numberDays; $i++) {
             //Display first column
-            $row .= "<tr><td>" . $i . "-" . $this->month . "-" . $this->year . "</td></tr>";
+            $row .= "<tr><td>" . $i . "-" . $this->month . "-" . $this->year . "</td>";
 
             //Display others columns
+            for ($j = 0; $j < count($users) ; $j++) {
+                $row .= "<td onclick='' class='dropdown-toggle' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+ 
+              <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                <a class=\"dropdown-item\" href=\"#\">J1</a>
+                <a class=\"dropdown-item\" href=\"#\">J2</a>
+                <a class=\"dropdown-item\" href=\"#\">N</a>
+                <a class=\"dropdown-item\" href=\"#\">Section</a>
+                <div class=\"dropdown-divider\"></div>
+                <a class=\"dropdown-item\" href=\"#\">Request</a>
+              </div>
+            </td>";
+            }
+            $row .= "</tr>";
 
         }
 
@@ -53,7 +83,6 @@ class Calendar
 
         echo $row;
     }
-
 
 
 }

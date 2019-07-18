@@ -49,7 +49,8 @@ class Planning
         // 2 : Permets de récupérer le planning d'un mois choisi
         $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) = ? ORDER BY date ASC");
         $getMonth->execute(array($month));
+        $result = $getMonth->fetch(PDO::FETCH_ASSOC);
 
-        return $getMonth->fetch(PDO::FETCH_ASSOC);
+         var_dump($result);
     }
 }

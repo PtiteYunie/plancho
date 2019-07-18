@@ -19,10 +19,14 @@ if (!isset($_SESSION) || $_SESSION['isConnected'] != true){
 
 <body>
 <?php
-$p = Planning::getCurrentPlanning();
-$g = Planning::getMonthPlanning(7);
 
-var_dump($g);
+$database = Database::getDatabaseConnection();
+// 2 : Permets de récupérer le planning d'un mois choisi
+
+$getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) = ? ORDER BY date ASC");
+$getMonth->execute(array(7));
+$result = $getMonth->fetch(PDO::FETCH_ASSOC);
+
 ?>
 </body>
 </html>

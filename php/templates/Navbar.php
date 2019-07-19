@@ -27,9 +27,64 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SES
     </nav>
 
 <?php
-} else {
-?>
+} else if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 1 && getcwd() != "/Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/admin") {
+    ?>
+    <!-- S'il est administrateur et hors du dossier admin -->
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li uk-tooltip="title: Retournez à l'accueil"><a href="index.php">Accueil</a></li>
+                <li uk-tooltip="title: Accédez au planning"><a href="planningMonth.php">Planning</a></li>
+                <li uk-tooltip="title: Accédez au planning"><a href="admin/index.php">Panel Administrateur</a></li>
+            </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="profil.php">Profil</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li uk-tooltip="title: Voir mes informations"><a href="profil.php#mesinfos">Mes informations</a></li>
+                            <li uk-tooltip="title: Lire mes messages"><a href="messagerie.php">Messagerie</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li uk-tooltip="title: Quitter Fight Food Waste"><a href="disconnect.php">Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+<?php
+} else if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 1 && getcwd() == "/Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/admin") {
+    ?>
+    <!-- S'il est administrateur et dans le dossier admin -->
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li uk-tooltip="title: Retournez à l'accueil"><a href="../index.php">Accueil</a></li>
+                <li uk-tooltip="title: Accédez au planning"><a href="../planningMonth.php">Planning</a></li>
+                <li uk-tooltip="title: Accédez au planning"><a href="../admin/index.php">Panel Administrateur</a></li>
+            </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="profil.php">Profil</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li uk-tooltip="title: Voir mes informations"><a href="profil.php#mesinfos">Mes informations</a></li>
+                            <li uk-tooltip="title: Lire mes messages"><a href="messagerie.php">Messagerie</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li uk-tooltip="title: Quitter Fight Food Waste"><a href="disconnect.php">Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<?php } else {
+    ?>
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
@@ -45,5 +100,5 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SES
     </div>
 </nav>
 
-    <!-- S'il n'est pas connecté -->
-<?php } ?>
+<?php
+} ?>

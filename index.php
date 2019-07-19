@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
-    //header("Location: planningMonth.php");
-    echo "Vous êtes bien connecté.";
-}
 ?>
 
 <!DOCTYPE html>

@@ -12,8 +12,10 @@ class User
     private $password;
     private $phone;
     private $isAdm;
+    private $regDate;
+    private $lastConnection;
 
-    public function __construct($id = null, $username = null, $firstName = null, $lastName = null, $email = null, $password = null, $phone = null, $isAdm = null){
+    public function __construct($id = null, $username = null, $firstName = null, $lastName = null, $email = null, $password = null, $phone = null, $isAdm = null, $regDate = null, $lastConnection = null){
         $this->setId($id);
         $this->setUsername($username);
         $this->setFirstName($firstName);
@@ -22,6 +24,8 @@ class User
         $this->setPassword($password);
         $this->setPhone($phone);
         $this->setIsAdm($isAdm);
+        $this->setRegDate($regDate);
+        $this->setLastConnection($lastConnection);
     }
 
     public function setId($id){ $this->id = $id; }
@@ -32,6 +36,8 @@ class User
     public function setPassword($password){ $this->password = $password; }
     public function setPhone($phone){ $this->phone = $phone; }
     public function setIsAdm($isAdm){ $this->isAdm = $isAdm; }
+    public function setRegDate($regDate){ $this->regDate = $regDate; }
+    public function setLastConnection($lastConnection){ $this->lastConnection = $lastConnection; }
 
     public function getId(){ return $this->id; }
     public function getUsername(){ return $this->username; }
@@ -41,14 +47,16 @@ class User
     public function getPassword(){ return $this->password; }
     public function getPhone(){ return $this->phone; }
     public function getIsAdm(){ return $this->isAdm; }
+    public function getRegDate(){ return $this->regDate; }
+    public function getLastConnection(){ return $this->lastConnection; }
 
     public function registerUser(){
         $database = Database::getDatabaseConnection(); // Connexion à la base de données
         if ($this->userExists() == false) { // Si l'adresse mail n'est pas utilisée
             if ($this->checkUser()) { // Si l'User est correctement rempli / formaté
                 $hashedPassword = sha1($this->password); // Hashage du mot de passe en SHA1.
-                $insertUser = $database->prepare("INSERT INTO user (username, firstName, lastName, email,  password, isAdm, phone) 
-                                                        VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $insertUser = $database->prepare("INSERT INTO user (username, firstName, lastName, email,  password, isAdm, phone, regDate) 
+                                                        VALUES (?, ?, ?, ?, ?, ?, ?, NOW())");
                 try {
                     $insertUser->execute([
                         $this->username,
@@ -81,18 +89,29 @@ class User
         }
     }
     public function connectUser(){
-        if ($this->userExists() !== false) { // Si l'utilisateur existe
+        if ($this->userExists() !== false) { // L'utilisateur exite : On récupère toutes les informations le concernant
             $userExists = $this->userExists();
-            if(hash_equals(sha1($this->password), $userExists['password'])) { // Si le mot de passe entré est correct
-                // if($userExists['code'] == "V") {
+            if(hash_equals(sha1($this->password), $userExists['password'])) { // On compare le mot de passe rentré dans le formulaire de connexion et celui de la BDD
+
+                // if($userExists['code'] == "V") { Pour plus tard : Faire une validation systématique par Email
+
+                    $database = Database::getDatabaseConnection();
+                    $query = $database->prepare("UPDATE lastConnection FROM user WHERE id = ?");  // On mets à jour sa date de dernière connexion
+                    $query->execute(array($userExists['id']));
+
+
                     $user = new User($userExists['id'], $userExists['username'], $userExists['firstName'], $userExists['lastName'],
                         $userExists['email'], $userExists['password'], $userExists['phone'], $userExists['isAdm']);
                     $user->createSession();
                     header("Location: index.php");
-            //    }
-             //   else{
-                    echo 'L\'utilisateur n\'est pas validé, vérifiez vos mails pour pouvoir le valider.';
-            //    }
+
+            /*
+             }
+                else
+            {
+              echo 'L\'utilisateur n\'est pas validé, vérifiez vos mails pour pouvoir le valider.';
+            }*/
+
             }
             else {
                 echo 'Mot de passe incorrect.';
@@ -135,7 +154,6 @@ class User
             return false;
         }
     }
-
     static function getAllUsers(){
         $database = Database::getDatabaseConnection();
 
@@ -143,6 +161,17 @@ class User
         $getUsers->execute();
 
         return $getUsers->fetchAll(PDO::FETCH_ASSOC);
+    }
+    static function deleteUser($id){
+        $database = Database::getDatabaseConnection();
+
+        $delete = $database->prepare("DELETE FROM user WHERE id = ?");
+        if($delete->execute(array($id))){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }

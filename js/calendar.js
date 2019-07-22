@@ -6,7 +6,7 @@ function addRequest(type,idUser,date){
             console.log(request.responseText);//Réponse à afficher
         }
     };
-    request.open('POST', '../../setRequests.php'); //path from home directory
+    request.open('POST', 'setRequests.php');
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(textRequest);
 }

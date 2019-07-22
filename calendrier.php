@@ -34,7 +34,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
         </div>
-        <?php if ($diplayCalendar === true) {
+        <?php if ($displayCalendar === true) {
             $calendar->displayCalendar();
 
         } else {

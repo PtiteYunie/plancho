@@ -1,8 +1,8 @@
 <?php
 require_once "php/classes/classIncluder.php";
-if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
-    //header("Location: planning.php");
-    echo "Vous êtes bien connecté.";
+if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
+
+    exit();
 }
 
 $displayCalendar = false;
@@ -10,6 +10,13 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
     require_once "php/classes/Calendar.php";
     $calendar = new Calendar($_GET['m'], $_GET['Y']);
     $displayCalendar = true;
+}
+else {
+    echo '<form action="" method="get">
+            <input type="text" name="m" placeholder="mois">
+            <input type="text" name="Y" placeholder="année">
+            <input type="submit">
+            </form>';
 }
 
 ?>
@@ -34,7 +41,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
         </div>
-        <?php if ($diplayCalendar === true) {
+        <?php if ($displayCalendar === true) {
             $calendar->displayCalendar();
 
         } else {
@@ -47,9 +54,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
 <script src="js/uikit.js"></script>
 <script src="js/uikit-icons.js"></script>
 </body>
-
 <script src="js/calendar.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

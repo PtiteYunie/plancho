@@ -5,11 +5,11 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
     echo "Vous êtes bien connecté.";
 }
 
-$diplayCalendar = false;
+$displayCalendar = false;
 if (isset($_GET['m']) && isset($_GET['Y'])) {
     require_once "php/classes/Calendar.php";
     $calendar = new Calendar($_GET['m'], $_GET['Y']);
-    $diplayCalendar = true;
+    $displayCalendar = true;
 }
 
 ?>

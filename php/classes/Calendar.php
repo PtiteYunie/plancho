@@ -20,7 +20,7 @@ class Calendar
         $users = User::getAllUsers();
 
 
-        $row = "<table class=\"uk-table uk-table-divider table-bordered\">
+        $row = "<table class=\"uk-table uk-table-divider table-bordered uk-table-small uk-overflow-auto\">
                     <caption></caption>
                         <thead>
                             <tr>

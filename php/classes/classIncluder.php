@@ -7,3 +7,4 @@ require_once("Database.php");
 require_once("User.php");
 require_once("Planning.php");
 require_once("Calendar.php");
+require_once("Vacation.php");

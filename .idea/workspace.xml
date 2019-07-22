@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28c27e10-8183-4a13-95b4-89e67c49424f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/forbiddenAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/usersAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/vacationsAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/classes/Vacation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calendrier.php" beforeDir="false" afterPath="$PROJECT_DIR$/calendrier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/classes/Calendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/classes/Calendar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/classes/classIncluder.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/classes/classIncluder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/templates/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates/Navbar.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,22 +109,25 @@
     <session id="-1834967017">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="4536" />
+          <entry key="php" value="4768" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="4536" />
+          <entry key="HTML" value="7" />
+          <entry key="PHP" value="4761" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="12" />
+          <entry key="js" value="1" />
+          <entry key="php" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="12" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PHP" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -145,15 +141,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="43" selection-start-line="9" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/usersAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -184,6 +171,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="552">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/calendrier.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -222,11 +218,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/templates/Navbar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/forbiddenAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+            <state relative-caret-position="174">
+              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding>
                 <element signature="n#getAllForbiden#0;n#!!top" />
                 <element signature="n#addForbidden#0;n#!!top" />
@@ -265,14 +270,14 @@
         <option value="$PROJECT_DIR$/js/calendar.js" />
         <option value="$PROJECT_DIR$/js/users.js" />
         <option value="$PROJECT_DIR$/php/classes/Calendar.php" />
-        <option value="$PROJECT_DIR$/calendrier.php" />
-        <option value="$PROJECT_DIR$/php/templates/Navbar.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/php/classes/classIncluder.php" />
         <option value="$PROJECT_DIR$/admin/vacationsAdmin.php" />
         <option value="$PROJECT_DIR$/php/classes/Forbidden.php" />
         <option value="$PROJECT_DIR$/php/classes/Vacation.php" />
         <option value="$PROJECT_DIR$/admin/forbiddenAdmin.php" />
+        <option value="$PROJECT_DIR$/php/templates/Navbar.php" />
+        <option value="$PROJECT_DIR$/calendrier.php" />
       </list>
     </option>
   </component>
@@ -324,6 +329,11 @@
             <path>
               <item name="plancho" type="b2602c69:ProjectViewProjectNode" />
               <item name="plancho" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="plancho" type="b2602c69:ProjectViewProjectNode" />
+              <item name="plancho" type="462c0819:PsiDirectoryNode" />
               <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -340,7 +350,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="getAllUsers&#9;null&#9;null&#10;classIncluder&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/classes/classIncluder.php&#10;displayCalendar&#9;null&#9;null&#10;calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php" />
+    <property name="SearchEverywhereHistoryKey" value="Calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php&#10;navbar&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/templates/Navbar.php&#10;getAllUsers&#9;null&#9;null&#10;classIncluder&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/classes/classIncluder.php&#10;displayCalendar&#9;null&#9;null&#10;calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -381,12 +391,12 @@
       <workItem from="1562836356882" duration="7466000" />
       <workItem from="1563267128220" duration="8169000" />
       <workItem from="1563522110366" duration="2732000" />
-      <workItem from="1563621239748" duration="6401000" />
+      <workItem from="1563621239748" duration="7377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31185000" />
+    <option name="totallyTimeSpent" value="32161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -460,13 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setRequests.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -498,20 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calendrier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/templates/Navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="69" column="119" selection-start-line="69" selection-start-column="119" selection-end-line="69" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -593,12 +582,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/forbiddenAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+        <state relative-caret-position="174">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding>
             <element signature="n#getAllForbiden#0;n#!!top" />
             <element signature="n#addForbidden#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/templates/Navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calendrier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
     </entry>

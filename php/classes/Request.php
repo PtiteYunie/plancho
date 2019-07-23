@@ -16,16 +16,12 @@ class Request
         $this->idVac = $idVac;
     }
 
-    public function addRequest(){
+    public function addRequest()
+    {
         $database = Database::getDatabaseConnection();
 
         $add = $database->prepare("INSERT INTO request (idUser, date, idVac) VALUES (?, ?, ?)");
-        if($add->execute(array($this->idUser, $this->date, $this->idVac))){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return $add->execute([$this->idUser, $this->date, $this->idVac]);
     }
 
 

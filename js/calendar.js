@@ -1,8 +1,12 @@
-function addRequest(type, idUser, date){
-    const textRequest = `type=${type}&idUser=${idUser}&date=${date}`;
+
+function addRequest(type,idUser,date){
+    const textRequest = `vac=${type}&idUser=${idUser}&date=${date}`;
+
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === 4) {
+            const container=document.getElementById("container");
+            container.innerHTML=request.responseText;
             console.log(request.responseText);//Réponse à afficher
         }
     };

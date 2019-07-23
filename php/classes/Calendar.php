@@ -67,10 +67,10 @@ class Calendar
                 $row .= "<td onclick='' class='dropdown-toggle' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
  
               <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                <a class=\"dropdown-item\" onclick=\"addRequest('J1'," . $users[$j]['id'] . "," . $date . ")\">J1</a>
-                <a class=\"dropdown-item\" onclick=\"addRequest('J2'," . $users[$j]['id'] . "," . $date . ")\">J2</a>
-                <a class=\"dropdown-item\" onclick=\"addRequest('N'," . $users[$j]['id'] . "," . $date . ")\">N</a>
-                <a class=\"dropdown-item\" onclick=\"addRequest('Section', " . $users[$j]['id'] . "," . $date . ")\">Section</a>
+                <a class=\"dropdown-item\" onclick=\"addRequest('J1'," . $users[$j]['id'] . ",'" . $date . "')\">J1</a>
+                <a class=\"dropdown-item\" onclick=\"addRequest('J2'," . $users[$j]['id'] . ",'" . $date . "')\">J2</a>
+                <a class=\"dropdown-item\" onclick=\"addRequest('N'," . $users[$j]['id'] . ",'" . $date . "')\">N</a>
+                <a class=\"dropdown-item\" onclick=\"addRequest('Section', " . $users[$j]['id'] . ",'" . $date . "')\">Section</a>
                 <div class=\"dropdown-divider\"></div>
                 <a class=\"dropdown-item\" href=\"#\">Request</a>
               </div>

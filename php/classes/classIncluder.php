@@ -8,3 +8,4 @@ require_once("User.php");
 require_once("Planning.php");
 require_once("Calendar.php");
 require_once("Vacation.php");
+require_once("Request.php");

@@ -19,7 +19,9 @@ require_once("../php/classes/classIncluder.php");
 <body>
 <?php require_once("../php/templates/Navbar.php"); ?>
 <h1 style="text-align: center;" class="uk-align-center">Administration</h1>
-<input type="text" name="user" class="uk-search-input" id="searchBox" placeholder="Rechercher">
+<h2><a href="vacationsAdmin.php">Vacations</a></h2>
+<h2><a href="forbiddenAdmin.php">Interdits</a></h2>
+<h2><a href="usersAdmin.php">Utilisateurs</a></h2>
 </body>
 <script src="../js/uikit.js"></script>
 <script src="../js/uikit-icons.js"></script>

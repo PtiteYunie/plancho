@@ -73,6 +73,7 @@ class User
             } else {
                 return "Vous avez mal rempli le formulaire. ";
             }
+            return true; 
         }
         else {
             return "L'utilisateur existe déjà.";

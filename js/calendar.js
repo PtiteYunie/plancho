@@ -1,5 +1,7 @@
+
 function addRequest(type,idUser,date){
     const textRequest = `vac=${type}&idUser=${idUser}&date=${date}`;
+
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === 4) {

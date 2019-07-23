@@ -1,4 +1,4 @@
-function addRequest(type,idUser,date){
+function addRequest(type, idUser, date){
     const textRequest = `type=${type}&idUser=${idUser}&date=${date}`;
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {

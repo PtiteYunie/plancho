@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Plancha 2.0</title>
+    <title>Plancho</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/uikit.css">
 </head>

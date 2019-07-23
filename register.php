@@ -21,15 +21,13 @@ if (isset($_POST['reg_password']) && $_POST['reg_verifPassword'] != NULL){
     );
     if (User::checkPassword($_POST['reg_password'], $_POST['reg_verifPassword'])) {
         if($user->registerUser() == true){
-            echo $user->registerUser();
             echo "Inscription réussie. Vérifiez vos mails.";
             header("Refresh:5; url=index.php");
         }
         else
             {
-            echo $user->registerUser();
-            var_dump($_POST);
-        }
+            echo "L'utilisateur existes déjà";
+            }
     }
     else {
         echo 'Les mots de passes ne correspondent pas.';

@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="28c27e10-8183-4a13-95b4-89e67c49424f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendrier.php" beforeDir="false" afterPath="$PROJECT_DIR$/calendrier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/classes/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/templates/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates/Navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/setRequests.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,25 +114,27 @@
     <session id="-1834967017">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="4768" />
+          <entry key="js" value="2" />
+          <entry key="php" value="5865" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="7" />
-          <entry key="PHP" value="4761" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PHP" value="5858" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="1" />
-          <entry key="php" value="14" />
+          <entry key="js" value="3" />
+          <entry key="php" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="14" />
+          <entry key="JavaScript" value="3" />
+          <entry key="PHP" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -140,113 +147,105 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/usersAdmin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="48" selection-start-line="48" selection-end-line="82" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/classes/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="162" column="34" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="34" />
-              <folding>
-                <element signature="n#userExists#0;n#User#0;n#!!top" />
-                <element signature="n#createSession#0;n#User#0;n#!!top" />
-                <element signature="n#checkUser#0;n#User#0;n#!!top" />
-                <element signature="n#checkPassword#0;n#User#0;n#!!top" />
-                <element signature="n#activateUser#0;n#User#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/calendrier.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/classes/classIncluder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/vacationsAdmin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/classes/Vacation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-              <folding>
-                <element signature="n#addVacation#0;n#vacation#0;n#!!top" />
-                <element signature="n#getAllVacations#0;n#vacation#0;n#!!top" />
-                <element signature="n#editLabel#0;n#vacation#0;n#!!top" />
-                <element signature="n#editName#0;n#vacation#0;n#!!top" />
-                <element signature="n#deleteVacation#0;n#vacation#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/templates/Navbar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/forbiddenAdmin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-              <folding>
-                <element signature="n#getAllForbiden#0;n#!!top" />
-                <element signature="n#addForbidden#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5883919">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/calendar.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="23">
+                  <caret line="1" column="63" lean-forward="true" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/setRequests.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="598">
+                  <caret line="31" column="71" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="71" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/php/classes/User.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="697">
+                  <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+                  <folding>
+                    <element signature="n#createSession#0;n#User#0;n#!!top" />
+                    <element signature="n#checkUser#0;n#User#0;n#!!top" />
+                    <element signature="n#checkPassword#0;n#User#0;n#!!top" />
+                    <element signature="n#activateUser#0;n#User#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/admin/vacationsAdmin.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/templates/Navbar.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1159">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/classes/Calendar.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="372">
+                  <caret line="69" column="67" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="67" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/register.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="414">
+                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/calendar.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="46">
+                  <caret line="2" selection-start-line="2" selection-end-line="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>calendar</find>
       <find>diplaycalenda</find>
+      <find>displayCalendar</find>
+      <find>addRequest</find>
+      <find>setRequests.</find>
+      <find>setRequests.php</find>
       <find>$u</find>
+      <find>var_dump</find>
     </findStrings>
     <replaceStrings>
       <replace>$v</replace>
@@ -260,24 +259,24 @@
       <list>
         <option value="$PROJECT_DIR$/php/classes/.conf.php" />
         <option value="$PROJECT_DIR$/connection.php" />
-        <option value="$PROJECT_DIR$/register.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/calendar.php" />
-        <option value="$PROJECT_DIR$/php/classes/User.php" />
         <option value="$PROJECT_DIR$/planningMonth.php" />
         <option value="$PROJECT_DIR$/php/classes/Planning.php" />
-        <option value="$PROJECT_DIR$/setRequests.php" />
-        <option value="$PROJECT_DIR$/js/calendar.js" />
         <option value="$PROJECT_DIR$/js/users.js" />
-        <option value="$PROJECT_DIR$/php/classes/Calendar.php" />
-        <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/php/classes/classIncluder.php" />
         <option value="$PROJECT_DIR$/admin/vacationsAdmin.php" />
         <option value="$PROJECT_DIR$/php/classes/Forbidden.php" />
         <option value="$PROJECT_DIR$/php/classes/Vacation.php" />
         <option value="$PROJECT_DIR$/admin/forbiddenAdmin.php" />
         <option value="$PROJECT_DIR$/php/templates/Navbar.php" />
+        <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/calendrier.php" />
+        <option value="$PROJECT_DIR$/php/classes/Calendar.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/calendar.js" />
+        <option value="$PROJECT_DIR$/setRequests.php" />
+        <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/php/classes/User.php" />
       </list>
     </option>
   </component>
@@ -326,22 +325,6 @@
               <item name="plancho" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="plancho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plancho" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="plancho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plancho" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="plancho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plancho" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -350,7 +333,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="Calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php&#10;navbar&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/templates/Navbar.php&#10;getAllUsers&#9;null&#9;null&#10;classIncluder&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/classes/classIncluder.php&#10;displayCalendar&#9;null&#9;null&#10;calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php" />
+    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/classes/User.php&#10;registe&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/register.php&#10;displayCalendar&#9;null&#9;null&#10;calendrier.php&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php&#10;setRequest&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/setRequests.php&#10;Calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php&#10;navbar&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/templates/Navbar.php&#10;getAllUsers&#9;null&#9;null&#10;classIncluder&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/php/classes/classIncluder.php&#10;calendrier&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/calendrier.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -391,18 +374,18 @@
       <workItem from="1562836356882" duration="7466000" />
       <workItem from="1563267128220" duration="8169000" />
       <workItem from="1563522110366" duration="2732000" />
-      <workItem from="1563621239748" duration="7377000" />
+      <workItem from="1563621239748" duration="9572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32161000" />
+    <option name="totallyTimeSpent" value="34356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2513312" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2513312" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -420,7 +403,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32967034" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32960597" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,13 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/classes/Planning.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="796">
@@ -467,13 +443,6 @@
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setRequests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -490,59 +459,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/classes/Calendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/classes/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="43" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/usersAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="48" selection-start-line="48" selection-end-line="82" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/classes/classIncluder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/classes/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="162" column="34" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="34" />
-          <folding>
-            <element signature="n#userExists#0;n#User#0;n#!!top" />
-            <element signature="n#createSession#0;n#User#0;n#!!top" />
-            <element signature="n#checkUser#0;n#User#0;n#!!top" />
-            <element signature="n#checkPassword#0;n#User#0;n#!!top" />
-            <element signature="n#activateUser#0;n#User#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -556,13 +476,6 @@
             <element signature="n#editName#0;n#vacation#0;n#!!top" />
             <element signature="n#deleteVacation#0;n#vacation#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/vacationsAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -593,22 +506,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/templates/Navbar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+        <state relative-caret-position="-1159">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/calendar.js">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="161">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/classes/classIncluder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/usersAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="60" column="12" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/vacationsAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calendrier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="-437">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setRequests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="31" column="71" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/classes/Calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="69" column="67" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="63" lean-forward="true" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/classes/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+          <folding>
+            <element signature="n#createSession#0;n#User#0;n#!!top" />
+            <element signature="n#checkUser#0;n#User#0;n#!!top" />
+            <element signature="n#checkPassword#0;n#User#0;n#!!top" />
+            <element signature="n#activateUser#0;n#User#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

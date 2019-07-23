@@ -10,20 +10,21 @@ class Request
 
     public function __construct($id = null, $idUser = null, $date = null, $idVac = null)
     {
-        $this->id=$id;
-        $this->idUser=$idUser;
-        $this->date=$date;
-        $this->idVac=$idVac;
+        $this->id = $id;
+        $this->idUser = $idUser;
+        $this->date = $date;
+        $this->idVac = $idVac;
     }
 
-    public function addRequest(){
+    public function addRequest()
+    {
         $database = Database::getDatabaseConnection();
 
-        $add = $database->prepare("INSERT INTO vacation (label, name) VALUES (?, ?)");
-        if($add->execute(array($this->label, $this->name))){
+        $add = $database->prepare("INSERT INTO request (idUser, date, idVac) VALUES (?, ?, ?)");
+        return $add->execute([$this->idUser, $this->date, $this->idVac]);
+        if ($add->execute([$this->idUser, $this->date, $this->idVac])) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

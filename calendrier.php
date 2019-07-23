@@ -1,9 +1,9 @@
 <?php
 require_once "php/classes/classIncluder.php";
-if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
-
-    exit();
-}
+//if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
+//
+//    exit();
+//}
 
 $displayCalendar = false;
 if (isset($_GET['m']) && isset($_GET['Y'])) {
@@ -36,11 +36,8 @@ else {
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <div id="container"></div>
+
         <?php if ($displayCalendar === true) {
             $calendar->displayCalendar();
 

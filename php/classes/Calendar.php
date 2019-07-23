@@ -85,6 +85,64 @@ class Calendar
 
         echo $row;
     }
+    public function displayGeneratedCalendar(){
+        $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year);
 
+        $users = User::getAllUsers();
+
+        $row = "<table class=\"uk-table uk-table-divider table-bordered uk-table-small uk-overflow-auto\">
+                    <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>Date</th>";
+
+        foreach ($users as $user) {
+            $row .= "<th id='". $user['id'] ."'>" . $user['username'] . "</th>";
+        }
+
+
+        $row .= "             </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            ";
+
+        /*
+         * <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+        */
+
+        for ($i = 1; $i <= $numberDays; $i++) {
+            $date = $i . "-" . $this->month . "-" . $this->year;
+            //Display first column
+            $row .= "<tr><td>" . $date . "</td>";
+
+            //Display others columns
+            for ($j = 0; $j < count($users); $j++) {
+            $row .= "<td id=". $j ."_". $i ." onclick='getVacation(\"". $date . "\", \"". $j ."_". $i ."\")'>
+            <script type='text/javascript'>getVacation(\"". $date . "\", \"". $j ."_". $i ."\")</script>
+            </td>";
+            }
+            $row .= "</tr>";
+
+        }
+
+        $row .= "</tbody>
+        </table>";
+
+        echo $row;
+    }
 
 }

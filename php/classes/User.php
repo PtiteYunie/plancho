@@ -73,7 +73,7 @@ class User
             } else {
                 return "Vous avez mal rempli le formulaire. ";
             }
-            return true; 
+            return true;
         }
         else {
             return "L'utilisateur existe déjà.";
@@ -173,6 +173,14 @@ class User
         else {
             return false;
         }
+    }
+    static function getUserById($id){
+        $database = Database::getDatabaseConnection();
+
+        $getUsers = $database->prepare("SELECT * FROM user WHERE id = ?");
+        $getUsers->execute($id);
+
+        return $getUsers->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

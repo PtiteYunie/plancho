@@ -10,3 +10,20 @@ function addRequest(type, idUser, date){
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(textRequest);
 }
+
+function getVacation(date, j){
+    let i = j.split("_");
+    let th = document.getElementsByTagName("th")[parseInt(i[0]) + 1];
+    let idUser = th.getAttribute("id");
+    const textRequest = `date=${date}&idUser=${idUser}`;
+    const request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            let writeZone = document.getElementById(j);
+            writeZone.innerHTML = request.responseText;
+        }
+    };
+    request.open('POST', 'getVacation.php');
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(textRequest);
+}

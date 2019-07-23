@@ -51,7 +51,23 @@ class Planning
         $getMonth->execute(array($month));
         $result = $getMonth->fetch(PDO::FETCH_ASSOC);
 
-         var_dump($result);
+        return $result;
+    }
+
+    static function getDayPlanning($month, $day, $user){
+
+        $database = Database::getDatabaseConnection();
+        // 2 : Permets de récupérer le planning d'un mois choisi
+        $getDay = $database->prepare("SELECT * FROM planning WHERE DAY(date) = ? AND MONTH(date) = ? AND idUser = ? ORDER BY date ASC");
+        $getDay->execute(array($day, $month, $user));
+        $result = $getDay->fetch(PDO::FETCH_ASSOC);
+
+        $getVacationLabel = $database->prepare("SELECT label FROM vacation WHERE id = ?");
+        $getVacationLabel->execute(array($result['idVacation']));
+        $r = $getVacationLabel->fetch(PDO::FETCH_ASSOC);
+        $result = $r['label'];
+
+        return $result;
     }
 
 }

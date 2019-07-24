@@ -22,6 +22,7 @@ require_once("../php/classes/classIncluder.php");
 <h2><a href="vacationsAdmin.php">Vacations</a></h2>
 <h2><a href="forbiddenAdmin.php">Interdits</a></h2>
 <h2><a href="usersAdmin.php">Utilisateurs</a></h2>
+<h2><a href="requestsAdmin.php">Requests</a></h2>
 </body>
 <script src="../js/uikit.js"></script>
 <script src="../js/uikit-icons.js"></script>

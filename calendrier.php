@@ -9,7 +9,6 @@ $displayCalendar = false;
 if (isset($_GET['dateCalendar'])){
     $_GET['m'] = date("m", strtotime($_GET["dateCalendar"]));
     $_GET['Y'] = date("Y", strtotime($_GET["dateCalendar"]));
-    var_dump($_GET);
 }
 if (isset($_GET['m']) && isset($_GET['Y'])) {
     require_once "php/classes/Calendar.php";
@@ -38,7 +37,8 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
         <div id="container"></div>
 
         <?php if ($displayCalendar === true) {
-            $calendar->displayGeneratedCalendar();
+            //$calendar->displayGeneratedCalendar();
+            $calendar->displayCalendar();
 
         } else {
             echo "Calendrier indisponible";

@@ -115,11 +115,17 @@ class User
 
             }
             else {
-                echo 'Mot de passe incorrect.';
+                echo "<div class=\"uk-alert-danger\" uk-alert>
+                 <a class=\"uk-alert-close\" uk-close></a>
+                 <p>Mot de passe incorrect</p>
+                 </div>";
             }
         }
         else {
-            echo 'L\'email mentionnée n\'existe pas.';
+            echo "<div class=\"uk-alert-danger\" uk-alert>
+                 <a class=\"uk-alert-close\" uk-close></a>
+                 <p>L'email mentionné n'existe pas.</p>
+                 </div>";
         }
     }
     public function createSession(){

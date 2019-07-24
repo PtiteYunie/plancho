@@ -20,6 +20,12 @@ class Calendar
         $users = User::getAllUsers();
         $vacations = Vacation::getAllVacations();
 
+        //Get all Requests from users in a month
+        $dateStart=$this->year."-".$this->month."-1";
+        $dateEnd=$this->year."-".$this->month."-".date(t,$this->month);
+        $requests= Request::getAllRequestsByDate($dateStart,$dateEnd);
+        var_dump($requests);
+
         $row = "<table class=\"uk-table uk-table-divider table-bordered uk-table-small uk-overflow-auto\">
                     <caption></caption>
                         <thead>

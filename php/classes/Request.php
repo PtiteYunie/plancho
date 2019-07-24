@@ -24,5 +24,16 @@ class Request
         return $add->execute([$this->idUser, $this->date, $this->idVac]);
     }
 
+    static function getAllRequestsByDate($dateStart,$dateEnd){
+        $database = Database::getDatabaseConnection();
+
+        $get = $database->prepare("SELECT * FROM request WHERE date BETWEEN ? AND ?");
+        if ($get->execute(array($dateStart,$dateEnd))){
+            return $get->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else{
+            return false;
+        }
+    }
 
 }

@@ -6,6 +6,11 @@ require_once "php/classes/classIncluder.php";
 //}
 
 $displayCalendar = false;
+if (isset($_GET['dateCalendar'])){
+    $_GET['m'] = date("m", strtotime($_GET["dateCalendar"]));
+    $_GET['Y'] = date("Y", strtotime($_GET["dateCalendar"]));
+    var_dump($_GET);
+}
 if (isset($_GET['m']) && isset($_GET['Y'])) {
     require_once "php/classes/Calendar.php";
     $calendar = new Calendar($_GET['m'], $_GET['Y']);
@@ -38,7 +43,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
         } else {
             echo "Calendrier indisponible";
             echo '<form action="" method="get">
-            <input type="month" name="month">
+            <input type="month" name="dateCalendar">
             <input type="submit">
             </form>';
 

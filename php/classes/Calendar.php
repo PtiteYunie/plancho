@@ -130,7 +130,8 @@ class Calendar
 
         }
 
-        $row .= "</tbody>
+        $row .= "
+        </tbody>
         </table>";
 
         echo $row;

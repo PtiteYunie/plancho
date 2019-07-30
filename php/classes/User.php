@@ -55,8 +55,7 @@ class User
         if ($this->userExists() == false) { // Si l'adresse mail n'est pas utilisée
             if ($this->checkUser()) { // Si l'User est correctement rempli / formaté
                 $hashedPassword = sha1($this->password); // Hashage du mot de passe en SHA1.
-                $insertUser = $database->prepare("INSERT INTO user (username, firstName, lastName, email,  password, isAdm, phone, regDate) 
-                                                        VALUES (?, ?, ?, ?, ?, ?, ?, NOW())");
+                $insertUser = $database->prepare("INSERT INTO user (username, firstName, lastName, email,  password, isAdm, phone) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 try {
                     $insertUser->execute([
                         $this->username,

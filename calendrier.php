@@ -1,9 +1,11 @@
 <?php
 require_once "php/classes/classIncluder.php";
-//if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
-//
-//    exit();
-//}
+var_dump($_SESSION);
+var_dump($_SESSION['user']->getIsAdm);
+if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
+
+    exit();
+}
 
 $displayCalendar = false;
 if (isset($_GET['dateCalendar'])){
@@ -12,7 +14,7 @@ if (isset($_GET['dateCalendar'])){
     var_dump($_GET);
 }
 if (isset($_GET['m']) && isset($_GET['Y'])) {
-    require_once "php/classes/Calendar.php";
+
     $calendar = new Calendar($_GET['m'], $_GET['Y']);
     $displayCalendar = true;
 }
@@ -38,7 +40,15 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
         <div id="container"></div>
 
         <?php if ($displayCalendar === true) {
-            $calendar->displayGeneratedCalendar();
+
+            if(count(Planning::getMonthPlanning($_GET['m']))>0){
+                $calendar->displayGeneratedCalendar();
+            }
+            else{
+                echo "Calendrier";
+                $calendar->displayCalendar();
+            }
+
 
         } else {
             echo "Calendrier indisponible";

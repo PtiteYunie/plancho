@@ -15,16 +15,16 @@ class Calendar
 
     public function displayCalendar()
     {
-        $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year);
+        $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year); //number of days in a month
 
         $users = User::getAllUsers();
         $vacations = Vacation::getAllVacations();
 
         //Get all Requests from users in a month
-        $dateStart=$this->year."-".$this->month."-1";
-        $dateEnd=$this->year."-".$this->month."-".date(t,$this->month);
-        $requests= Request::getAllRequestsByDate($dateStart,$dateEnd);
-        var_dump($requests);
+        $dateStart = $this->year . "-" . $this->month . "-1";
+        $dateEnd = $this->year . "-" . $this->month . "-" . date('t', $this->month);
+        $requests = Request::getAllRequestsByDate($dateStart, $dateEnd);
+
 
         $row = "<table class=\"uk-table uk-table-divider table-bordered uk-table-small uk-overflow-auto\">
                     <caption></caption>
@@ -35,7 +35,6 @@ class Calendar
         foreach ($users as $user) {
             $row .= "<th>" . $user['username'] . "</th>";
         }
-
 
         $row .= "             </tr>
                         </thead>
@@ -53,11 +52,18 @@ class Calendar
             $row .= "<tr><td>" . $date . "</td>";
 
             //Display others columns
+            $j=0;
             for ($j = 0; $j < count($users); $j++) {
 
-                $row .= "<td onclick='' class='dropdown-toggle' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                $row .= "<td class='dropdown-toggle' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        <div>" . $users[$j]['id'] . "</div>
                         <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
                 foreach ($vacations as $vacation) {
+                    if(1){};
+                    var_dump($j);
+                    $x=$j;
+                    $row .= "<div>" . $x . "</div>";
+                    if(1){}
                     $row .= "<a class=\"dropdown-item\" onclick=\"addRequest(" . $vacation['id'] . "," . $users[$j]['id'] . ",'" . $date . "')\">" . $vacation['label'] . "</a>";
                 }
 
@@ -76,7 +82,9 @@ class Calendar
 
         echo $row;
     }
-    public function displayGeneratedCalendar(){
+
+    public function displayGeneratedCalendar()
+    {
         $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year);
 
         $users = User::getAllUsers();
@@ -88,7 +96,7 @@ class Calendar
                                 <th>Date</th>";
 
         foreach ($users as $user) {
-            $row .= "<th id='". $user['id'] ."'>" . $user['username'] . "</th>";
+            $row .= "<th id='" . $user['id'] . "'>" . $user['username'] . "</th>";
         }
 
 
@@ -122,8 +130,8 @@ class Calendar
 
             //Display others columns
             for ($j = 0; $j < count($users); $j++) {
-            $row .= "<td id=". $j ."_". $i ." onclick='getVacation(\"". $date . "\", \"". $j ."_". $i ."\")'>
-            <script type='text/javascript'>getVacation(\"". $date . "\", \"". $j ."_". $i ."\")</script>
+                $row .= "<td id=" . $j . "_" . $i . " onclick='getVacation(\"" . $date . "\", \"" . $j . "_" . $i . "\")'>
+            <script type='text/javascript'>getVacation(\"" . $date . "\", \"" . $j . "_" . $i . "\")</script>
             </td>";
             }
             $row .= "</tr>";
@@ -135,6 +143,16 @@ class Calendar
         </table>";
 
         echo $row;
+    }
+
+    public function test()
+    {
+        //Get all Requests from users in a month
+        $dateStart = $this->year . "-" . $this->month . "-1";
+        $dateEnd = $this->year . "-" . $this->month . "-" . date('t', $this->month);
+        $requests = Request::getAllRequestsByDate($dateStart, $dateEnd);
+        return $requests;
+
     }
 
 }

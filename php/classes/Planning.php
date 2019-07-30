@@ -41,7 +41,7 @@ class Planning
         $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) LIKE MONTH(CURDATE()) ORDER BY date ASC");
         $getMonth->execute();
 
-        return $getMonth->fetch(PDO::FETCH_ASSOC);
+        return $getMonth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     static function getMonthPlanning($month){
@@ -49,7 +49,7 @@ class Planning
         // 2 : Permets de récupérer le planning d'un mois choisi
         $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) = ? ORDER BY date ASC");
         $getMonth->execute(array($month));
-        $result = $getMonth->fetch(PDO::FETCH_ASSOC);
+        $result = $getMonth->fetchAll(PDO::FETCH_ASSOC);
 
         return $result;
     }
@@ -64,7 +64,7 @@ class Planning
 
         $getVacationLabel = $database->prepare("SELECT label FROM vacation WHERE id = ?");
         $getVacationLabel->execute(array($result['idVacation']));
-        $r = $getVacationLabel->fetch(PDO::FETCH_ASSOC);
+        $r = $getVacationLabel->fetchAll(PDO::FETCH_ASSOC);
         $result = $r['label'];
 
         return $result;

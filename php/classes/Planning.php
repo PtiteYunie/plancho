@@ -41,9 +41,10 @@ class Planning
         $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) LIKE MONTH(CURDATE()) ORDER BY date ASC");
         $getMonth->execute();
 
-        return $getMonth->fetch(PDO::FETCH_ASSOC);
+        return $getMonth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Fonction permettant de récupérer toutes les informations concernant un mois et une année prédéfinie
     static function getMonthPlanning($month, $year){
         $database = Database::getDatabaseConnection();
         // 2 : Permets de récupérer le planning d'un mois choisi
@@ -54,6 +55,7 @@ class Planning
         return $result;
     }
 
+    // Fonction permettant de récupérer les informations concernant un jour spécifique pour un utilisateur spécifique.
     static function getDayPlanning($year, $month, $day, $user){
 
         $database = Database::getDatabaseConnection();

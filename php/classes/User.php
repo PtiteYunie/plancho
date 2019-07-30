@@ -57,7 +57,7 @@ class User
                 $hashedPassword = sha1($this->password); // Hashage du mot de passe en SHA1.
                 $insertUser = $database->prepare("INSERT INTO user (username, firstName, lastName, email,  password, isAdm, phone, regDate) 
                                                         VALUES (?, ?, ?, ?, ?, ?, ?, NOW())");
-                try {
+                if (
                     $insertUser->execute([
                         $this->username,
                         $this->firstName,
@@ -66,14 +66,14 @@ class User
                         $hashedPassword,
                         0, // 0 = Utilisateur normal, 1 = Administrateur.
                         $this->phone
-                    ]);
-                } catch (Error $e) {
-                    return $e->getMessage();
+                    ])){
+                    return true;
+                } else {
+                    return false;
                 }
             } else {
                 return "Vous avez mal rempli le formulaire. ";
             }
-            return true;
         }
         else {
             return "L'utilisateur existe déjà.";
@@ -97,7 +97,7 @@ class User
                 // if($userExists['code'] == "V") { Pour plus tard : Faire une validation systématique par Email
 
                     $database = Database::getDatabaseConnection();
-                    $query = $database->prepare("UPDATE lastConnection FROM user WHERE id = ?");  // On mets à jour sa date de dernière connexion
+                    $query = $database->prepare("UPDATE user SET lastConnection = NOW() WHERE id = ?");  // On mets à jour sa date de dernière connexion
                     $query->execute(array($userExists['id']));
 
 
@@ -184,7 +184,7 @@ class User
         $database = Database::getDatabaseConnection();
 
         $getUsers = $database->prepare("SELECT * FROM user WHERE id = ?");
-        $getUsers->execute($id);
+        $getUsers->execute(array($id));
 
         return $getUsers->fetchAll(PDO::FETCH_ASSOC);
     }

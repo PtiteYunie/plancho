@@ -37,8 +37,8 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
         <div id="container"></div>
 
         <?php if ($displayCalendar === true) {
-            //$calendar->displayGeneratedCalendar();
-            $calendar->displayCalendar();
+            $calendar->displayGeneratedCalendar();
+            //$calendar->displayCalendar();
 
         } else {
             echo "Calendrier indisponible";

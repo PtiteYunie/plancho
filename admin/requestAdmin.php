@@ -16,7 +16,7 @@ if (isset($_SESSION['isAdm']) && $_SESSION['isAdm'] != 1){
     exit();
 }
 if (isset($_POST['deleteButton']) && $_POST['deleteButton'] != null){
-    if (User::deleteUser($_POST['deleteButton'])){
+    if (Request::deleteRequest($_POST['deleteButton'])){
         echo "<div class=\"uk-alert-success\" uk-alert>
                  <a class=\"uk-alert-close\" uk-close></a>
                  <p>Requête supprimée!</p>
@@ -30,7 +30,7 @@ if (isset($_POST['deleteButton']) && $_POST['deleteButton'] != null){
     }
 }
 $today = date("Y-m-d");
-$requestInfo = Request::getAllRequestsByDate()
+$requestInfo = Request::getAllRequestsByDate($today);
 
 ?>
 
@@ -43,20 +43,15 @@ $requestInfo = Request::getAllRequestsByDate()
 </head>
 <body>
 <?php require_once("../php/templates/Navbar.php"); ?>
-<h1 style="text-align: center;" class="uk-align-center">Gestion des utilisateurs</h1>
-<input type="text" name="user" class="uk-search-input" id="searchBox" placeholder="Rechercher">
-<div id="typeSearch" style="visibility: hidden;" class="user"></div>
-
+<h1 style="text-align: center;" class="uk-align-center">Gestion des requêtes</h1>
+<p>TODO : Ajouter sélectionneur d'utilisateur ou de date.</p>
 <table class="uk-table uk-table-striped uk-table-hover uk-table-large">
     <thead>
     <tr>
-        <th>Prénom</th>
-        <th>Nom</th>
+        <th>Id</th>
         <th>Nom d'utilisateur</th>
-        <th>Adresse mail</th>
-        <th>N° Téléphone</th>
-        <th>Date d'inscription</th>
-        <th>Dernière connexion</th>
+        <th>Date</th>
+        <th>Vacation</th>
         <th></th>
     </tr>
     </thead>
@@ -64,17 +59,14 @@ $requestInfo = Request::getAllRequestsByDate()
 
     <tbody id="rewrite">
     <?php
-    foreach($userInfos as $u){
-        $user = new User(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-        echo '<tr onclick="userEditForm(usr'.$u['id'].')" id="usr'.$u['id'].'">
-                  <td>' . $u['firstName'] . '</td>
-                  <td>' . $u['lastName'] . '</td>
-                  <td>' . $u['username'] . '</td>
-                  <td>' . $u['email'] . '</td>
-                  <td>' . $u['phone'] . '</td>
-                  <td>' . $u['regDate'] . '</td>
-                  <td>' . $u['lastConnection'] . '</td>
-                  <td><button class="uk-button uk-button-danger" name="deleteButton" type="submit" value="'. $u['id'] . '" form="deleteUser">SUPPRIMER</button></td>
+    foreach($requestInfo as $r){
+        $user = new Request(NULL, $r['idUser'], $r['date'], $r['idVac']);
+        echo '<tr>
+                  <td>' . $r['id'] . '</td>
+                  <td>' . User::getUserById($r['idUser'])[0]['username'] . '</td>
+                  <td>' . $r['date'] . '</td>
+                  <td>' . Vacation::getVacationById($r['idVac'])["name"] . '</td>
+                  <td><button class="uk-button uk-button-danger" name="deleteButton" type="submit" value="'. $r['id'] . '" form="deleteUser">SUPPRIMER</button></td>
                   </tr>';
     }
     ?>

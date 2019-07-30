@@ -30,7 +30,8 @@ if (isset($_POST['deleteButton']) && $_POST['deleteButton'] != null){
     }
 }
 $today = date("Y-m-d");
-$requestInfo = Request::getAllRequestsByDate($today);
+$nextMonth = date('Y-m-d', strtotime('+1 month', strtotime($today)));
+$requestInfo = Request::getAllRequestsByDate($today, $nextMonth);
 
 ?>
 

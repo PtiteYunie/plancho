@@ -66,6 +66,7 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SES
                 <li uk-tooltip="title: Accédez au planning"><a href="../admin/usersAdmin.php">Gestion des utilisateurs</a></li>
                 <li uk-tooltip="title: Accédez au planning"><a href="../admin/vacationsAdmin.php">Gestion des vacations</a></li>
                 <li uk-tooltip="title: Accédez au planning"><a href="../admin/forbiddenAdmin.php">Gestion des interdits</a></li>
+                <li uk-tooltip="title: Accédez au planning"><a href="../admin/requestAdmin.php">Gestion des requêtes</a></li>
             </ul>
         </div>
         <div class="uk-navbar-right">

@@ -65,14 +65,14 @@ class User
                         $hashedPassword,
                         0, // 0 = Utilisateur normal, 1 = Administrateur.
                         $this->phone
-                    ]);
-                } catch (Error $e) {
-                    return $e->getMessage();
+                    ])){
+                    return true;
+                } else {
+                    return false;
                 }
             } else {
                 return "Vous avez mal rempli le formulaire. ";
             }
-            return true;
         }
         else {
             return "L'utilisateur existe déjà.";
@@ -96,7 +96,7 @@ class User
                 // if($userExists['code'] == "V") { Pour plus tard : Faire une validation systématique par Email
 
                     $database = Database::getDatabaseConnection();
-                    $query = $database->prepare("UPDATE lastConnection FROM user WHERE id = ?");  // On mets à jour sa date de dernière connexion
+                    $query = $database->prepare("UPDATE user SET lastConnection = NOW() WHERE id = ?");  // On mets à jour sa date de dernière connexion
                     $query->execute(array($userExists['id']));
 
 
@@ -114,16 +114,26 @@ class User
 
             }
             else {
-                echo 'Mot de passe incorrect.';
+                echo "<div class=\"uk-alert-danger\" uk-alert>
+                 <a class=\"uk-alert-close\" uk-close></a>
+                 <p>Mot de passe incorrect</p>
+                 </div>";
             }
         }
         else {
-            echo 'L\'email mentionnée n\'existe pas.';
+            echo "<div class=\"uk-alert-danger\" uk-alert>
+                 <a class=\"uk-alert-close\" uk-close></a>
+                 <p>L'email mentionné n'existe pas.</p>
+                 </div>";
         }
     }
     public function createSession(){
         unset($this->password);
-        $_SESSION['user'] = $this;
+        $_SESSION['username'] = $this->username;
+        $_SESSION['firstName'] = $this->firstName;
+        $_SESSION['lastName'] = $this->lastName;
+        $_SESSION['email'] = $this->email;
+        $_SESSION['lastConnection'] = $this->lastConnection;
         $_SESSION['isConnected'] = true;
         $_SESSION['isAdm'] = $this->isAdm;
     }
@@ -177,7 +187,7 @@ class User
         $database = Database::getDatabaseConnection();
 
         $getUsers = $database->prepare("SELECT * FROM user WHERE id = ?");
-        $getUsers->execute($id);
+        $getUsers->execute(array($id));
 
         return $getUsers->fetchAll(PDO::FETCH_ASSOC);
     }

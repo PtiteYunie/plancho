@@ -122,7 +122,8 @@ function deleteForbidden($id){
 <form action="" method="post" class="uk-text-center">
     <div class="uk-margin">
         <div class="uk-inline">
-            <select class="uk-select" name="day1" placeholder="Jour 1">
+            <legend>Jour 1 : </legend>
+            <select class="uk-select" name="day1">
                 <?php foreach(Vacation::getAllVacations() as $v){
                     echo "<option value='". $v['id'] . "'>" . $v['label'] . "</option>";
                 }
@@ -133,7 +134,8 @@ function deleteForbidden($id){
 
     <div class="uk-margin">
         <div class="uk-inline">
-            <select class="uk-select" name="day2" placeholder="Jour 2">
+            <legend>Jour 2 : </legend>
+            <select class="uk-select" name="day2">
                 <?php foreach(Vacation::getAllVacations() as $v){
                     echo "<option value='". $v['id'] . "'>" . $v['label'] . "</option>";
                 }

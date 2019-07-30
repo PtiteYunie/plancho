@@ -44,22 +44,24 @@ class Planning
         return $getMonth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    static function getMonthPlanning($month){
+    // Fonction permettant de récupérer toutes les informations concernant un mois et une année prédéfinie
+    static function getMonthPlanning($month, $year){
         $database = Database::getDatabaseConnection();
         // 2 : Permets de récupérer le planning d'un mois choisi
-        $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) = ? ORDER BY date ASC");
-        $getMonth->execute(array($month));
+        $getMonth = $database->prepare("SELECT * FROM planning WHERE MONTH(date) = ? AND YEAR(date) = ? ORDER BY date ASC");
+        $getMonth->execute(array($month, $year));
         $result = $getMonth->fetchAll(PDO::FETCH_ASSOC);
 
         return $result;
     }
 
-    static function getDayPlanning($month, $day, $user){
+    // Fonction permettant de récupérer les informations concernant un jour spécifique pour un utilisateur spécifique.
+    static function getDayPlanning($year, $month, $day, $user){
 
         $database = Database::getDatabaseConnection();
         // 2 : Permets de récupérer le planning d'un mois choisi
-        $getDay = $database->prepare("SELECT * FROM planning WHERE DAY(date) = ? AND MONTH(date) = ? AND idUser = ? ORDER BY date ASC");
-        $getDay->execute(array($day, $month, $user));
+        $getDay = $database->prepare("SELECT * FROM planning WHERE DAY(date) = ? AND MONTH(date) = ? AND YEAR(date) = ? AND idUser = ? ORDER BY date ASC");
+        $getDay->execute(array($day, $month, $year, $user));
         $result = $getDay->fetch(PDO::FETCH_ASSOC);
 
         $getVacationLabel = $database->prepare("SELECT label FROM vacation WHERE id = ?");
@@ -69,5 +71,4 @@ class Planning
 
         return $result;
     }
-
 }

@@ -11,7 +11,6 @@ $displayCalendar = false;
 if (isset($_GET['dateCalendar'])){
     $_GET['m'] = date("m", strtotime($_GET["dateCalendar"]));
     $_GET['Y'] = date("Y", strtotime($_GET["dateCalendar"]));
-    var_dump($_GET);
 }
 if (isset($_GET['m']) && isset($_GET['Y'])) {
 

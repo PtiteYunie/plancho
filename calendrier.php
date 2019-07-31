@@ -1,7 +1,6 @@
 <?php
 require_once "php/classes/classIncluder.php";
-var_dump($_SESSION);
-var_dump($_SESSION['user']->getIsAdm);
+
 if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
 
     exit();
@@ -40,7 +39,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
 
         <?php if ($displayCalendar === true) {
 
-            if(count(Planning::getMonthPlanning($_GET['m']))>0){
+            if(count(Planning::getMonthPlanning($_GET['m'],$_GET['Y']))>0){
                 $calendar->displayGeneratedCalendar();
             }
             else{

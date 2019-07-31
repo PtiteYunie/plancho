@@ -52,17 +52,16 @@ class Calendar
             $row .= "<tr><td>" . $date . "</td>";
 
             //Display others columns
-            $j=0;
+            $j=5;
             for ($j = 0; $j < count($users); $j++) {
 
-                $row .= "<td class='dropdown-toggle' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                $row .= "<td class='dropdown-toggle ' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                         <div>" . $users[$j]['id'] . "</div>
                         <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
                 foreach ($vacations as $vacation) {
                     if(1){};
-                    var_dump($j);
-                    $x=$j;
-                    $row .= "<div>" . $x . "</div>";
+
+                    $row .= "<div>" . $j . "</div>";
                     if(1){}
                     $row .= "<a class=\"dropdown-item\" onclick=\"addRequest(" . $vacation['id'] . "," . $users[$j]['id'] . ",'" . $date . "')\">" . $vacation['label'] . "</a>";
                 }

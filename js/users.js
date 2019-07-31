@@ -260,3 +260,32 @@ function removeUserEditForm(user){
     origin.removeAttribute('onclick'); // Suppression du onclick
     origin.setAttribute('onclick', 'userEditForm(' + user + ')'); // Rajout de la fonction de création sur le onclick
 }
+
+function searchByUser(){
+    let input = document.getElementById("searchByUser").value;
+    let append = document.getElementById("getUsers");
+
+    let request = new XMLHttpRequest();
+    if (1) { // input > 0
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                if (request.responseText !== '0' || request.responseText.length > 0 || request.responseText != null) {
+                    let users = JSON.parse(request.responseText);
+                    console.log(users);
+                        for (let user in users) {
+                            append.innerHTML += "<option>" + users[user]["firstName"] + "</option>";
+                        }
+                }
+                else {
+                    append.innerHTML = "";
+                }
+            }
+        };
+        request.open('POST', '../php/ajax/searchByUser.php');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(`input=${input}`);
+    }
+    else {
+        console.log('Vous avez fait quelque chose de mal.');
+    }
+}

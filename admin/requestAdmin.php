@@ -15,6 +15,15 @@ if (isset($_SESSION['isAdm']) && $_SESSION['isAdm'] != 1){
     echo "Vous n'êtes pas autorisé à accéder à ce contenu. <a href='../index.php'>Accueil</a>";
     exit();
 }
+if (isset($_GET['dateCalendar'])){
+    $today = $_GET['dateCalendar'];
+    $nextMonth = date('Y-m-d', strtotime('+1 month', strtotime($today)));
+}
+else {
+    $today = date("Y-m-d");
+    $nextMonth = date('Y-m-d', strtotime('+1 month', strtotime($today)));
+}
+
 if (isset($_POST['deleteButton']) && $_POST['deleteButton'] != null){
     if (Request::deleteRequest($_POST['deleteButton'])){
         echo "<div class=\"uk-alert-success\" uk-alert>
@@ -29,10 +38,12 @@ if (isset($_POST['deleteButton']) && $_POST['deleteButton'] != null){
             </div>";
     }
 }
-$today = date("Y-m-d");
-$nextMonth = date('Y-m-d', strtotime('+1 month', strtotime($today)));
-$requestInfo = Request::getAllRequestsByDate($today, $nextMonth);
+if (isset($_POST['searchByUser'])){
 
+}
+else {
+    $requestInfo = Request::getAllRequestsByDate($today, $nextMonth);
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +56,19 @@ $requestInfo = Request::getAllRequestsByDate($today, $nextMonth);
 <body>
 <?php require_once("../php/templates/Navbar.php"); ?>
 <h1 style="text-align: center;" class="uk-align-center">Gestion des requêtes</h1>
-<p>TODO : Ajouter sélectionneur d'utilisateur ou de date.</p>
+<div class="uk-align-left uk-float-left">
+<h3>Rechercher par date</h3>
+<form action="" method="get">
+    <input type="month" name="dateCalendar">
+    <input type="submit">
+</form>
+</div>
+<div class="uk-align-right uk-float-right">
+    <h3>Rechercher par utilisateur</h3>
+        <input type="text" name="searchByUser" id="searchByUser" onkeyup="searchByUser()">
+        <select id="getUsers"></select>
+        <input type="submit">
+</div>
 <table class="uk-table uk-table-striped uk-table-hover uk-table-large">
     <thead>
     <tr>

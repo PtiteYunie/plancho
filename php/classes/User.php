@@ -294,4 +294,16 @@ class User
         return $getUsers->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    static function getUserByNames($info)
+    {
+        $database = Database::getDatabaseConnection();
+
+        $getUsers = $database->prepare("SELECT firstName, lastName, id, email FROM user  WHERE lower(firstName) LIKE ? OR lower(lastName) LIKE ?
+	         OR lower(firstName) AND lower(lastName) LIKE ? OR lower(CONCAT(firstName, ' ', lastName)) LIKE ?
+	         OR lower(CONCAT(lastName, ' ', firstName)) LIKE ?");
+        $getUsers->execute(array($info, $info, $info, $info, $info));
+
+        return $getUsers->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

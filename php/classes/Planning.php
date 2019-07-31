@@ -66,7 +66,9 @@ class Planning
 
         $getVacationLabel = $database->prepare("SELECT label FROM vacation WHERE id = ?");
         $getVacationLabel->execute(array($result['idVacation']));
-        $r = $getVacationLabel->fetchAll(PDO::FETCH_ASSOC);
+
+        $r = $getVacationLabel->fetch(PDO::FETCH_ASSOC);
+
         $result = $r['label'];
 
         return $result;

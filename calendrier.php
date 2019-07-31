@@ -32,7 +32,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
 <body>
 <script src="js/calendar.js"></script>
 <?php require_once("php/templates/Navbar.php"); ?>
-<div class="row">
+<div class="row uk-table-striped">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <div id="container"></div>
@@ -40,7 +40,7 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
         <?php if ($displayCalendar === true) {
 
             if(count(Planning::getMonthPlanning($_GET['m'],$_GET['Y']))>0){
-                $calendar->displayGeneratedCalendar();
+                $calendar->displayCalendar();
             }
             else{
                 echo "Calendrier";

@@ -1,7 +1,7 @@
 <?php
 require_once "php/classes/classIncluder.php";
 var_dump($_SESSION);
-var_dump($_SESSION['user']->getIsAdm);
+var_dump($_SESSION['isAdm']);
 if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
 
     exit();

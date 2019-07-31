@@ -25,7 +25,6 @@ class Calendar
         $dateEnd = $this->year . "-" . $this->month . "-" . date('t', $this->month);
         $requests = Request::getAllRequestsByDate($dateStart, $dateEnd);
 
-
         $row = "<table class=\"uk-table uk-table-divider table-bordered uk-table-small uk-overflow-auto\">
                     <caption></caption>
                         <thead>
@@ -52,19 +51,21 @@ class Calendar
                             ";
 
         for ($i = 1; $i <= $numberDays; $i++) {
-            $date = $i . "-" . $this->month . "-" . $this->year;
+            $date=date_create($i . "-" . $this->month . "-" . $this->year);
+
             //Display first column
-            $row .= "<tr><td>" . $date . "</td>";
+            $row .= "<tr><td>" . $date->format('j-m-Y') . "</td>";
 
             //Display others columns
             for ($j = 0; $j < count($users); $j++) {
 
-                $row .= "<td class='dropdown'><div class='dropdown-toggle ' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        <div>" . $users[$j]['id'] . "</div>
-                        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
-                
+                $row .= "<td class='dropdown'><div class='dropdown-toggle ' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">";
+                //var_dump($this->requestDay($requests,$dateFormat,$users[$j]['id']));
+                $row .= $this->requestDay($requests,$date,$users[$j]['id']);
+                $row .= "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
+
                 foreach ($vacations as $vacation) {
-                    $row .= "<a class=\"dropdown-item\" onclick=\"addRequest(" . $vacation['id'] . "," . $users[$j]['id'] . ",'" . $date . "')\">" . $vacation['label'] . "</a>";
+                    $row .= "<a class=\"dropdown-item\" onclick=\"addRequest(" . $vacation['id'] . "," . $users[$j]['id'] . ",'" . $date->format('Y-m-d') . "')\">" . $vacation['label'] . "</a>";
                 }
 
                 $row .= "
@@ -110,23 +111,12 @@ class Calendar
                         <tbody>
                             ";
 
-        /*
-         * <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-        */
-
         for ($i = 1; $i <= $numberDays; $i++) {
-            $date = $i . "-" . $this->month . "-" . $this->year;
+            $date=date_create($i . "-" . $this->month . "-" . $this->year);
+
+
             //Display first column
-            $row .= "<tr><td>" . $date . "</td>";
+            $row .= "<tr><td>" . $date->format('j-m-Y') . "</td>";
 
             //Display others columns
             for ($j = 0; $j < count($users); $j++) {
@@ -143,6 +133,20 @@ class Calendar
         </table>";
 
         echo $row;
+    }
+
+    private function requestDay($requests,$date,$user){ //Return formated request who correspond to the date and the day
+        $formatedRequests='';
+        foreach ($requests as $request){
+            if($request['date']==$date->format('Y-m-d')&&$request['idUser']==$user){
+                $formatedRequests.="<div>".$request['idVac']."</div>";
+            }
+        }
+        if (strlen($formatedRequests)>0){
+            return $formatedRequests;
+        }
+
+        return "<div></div>";
     }
 
     public function test()

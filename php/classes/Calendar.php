@@ -59,25 +59,18 @@ class Calendar
             //Display others columns
             for ($j = 0; $j < count($users); $j++) {
 
-                $row .= "<td class='dropdown-toggle ' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                $row .= "<td class='dropdown'><div class='dropdown-toggle ' data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                         <div>" . $users[$j]['id'] . "</div>
                         <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
+                
                 foreach ($vacations as $vacation) {
-                    if (1) {
-                    };
-
-                    $row .= "<div>";
-                    $row .= $j;
-                    $row .= "</div>";
-                    if (1) {
-                    }
                     $row .= "<a class=\"dropdown-item\" onclick=\"addRequest(" . $vacation['id'] . "," . $users[$j]['id'] . ",'" . $date . "')\">" . $vacation['label'] . "</a>";
                 }
 
                 $row .= "
                 <div class=\"dropdown-divider\"></div>
                 <a class=\"dropdown-item\" href=\"#\">Request</a>
-              </div>
+              </div></div>
             </td>";
             }
             $row .= "</tr>";

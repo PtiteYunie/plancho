@@ -17,7 +17,13 @@ class Calendar
     {
         $numberDays = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year); //number of days in a month
 
+        //Get all users formated for table head
         $users = User::getAllUsers();
+        $usersFormated='';
+        foreach ($users as $user) {
+            $usersFormated .= "<th>" . $user['username'] . "</th>";
+        }
+
         $vacations = Vacation::getAllVacations();
 
         //Get all Requests from users in a month
@@ -31,9 +37,7 @@ class Calendar
                             <tr>
                                 <th>Date</th>";
 
-        foreach ($users as $user) {
-            $row .= "<th>" . $user['username'] . "</th>";
-        }
+        $row.= $usersFormated;
 
         $row .= "             </tr>
                         </thead>
@@ -41,9 +45,7 @@ class Calendar
                             <tr>
                                 <th>Date</th>";
 
-        foreach ($users as $user) {
-            $row .= "<th>" . $user['username'] . "</th>";
-        }
+        $row.= $usersFormated;
 
         $row .= "            </tr>
                         </tfoot>
@@ -64,7 +66,7 @@ class Calendar
                 $row .= $this->requestDay($requests,$date,$users[$j]['id']);
                 $row .= "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
 
-                foreach ($vacations as $vacation) {
+                foreach ($vacations as $vacation) { //Create dropwdown menu with vacation + user id + date
                     $row .= "<a class=\"dropdown-item\" onclick=\"addRequest(" . $vacation['id'] . "," . $users[$j]['id'] . ",'" . $date->format('Y-m-d') . "')\">" . $vacation['label'] . "</a>";
                 }
 
@@ -138,8 +140,11 @@ class Calendar
     private function requestDay($requests,$date,$user){ //Return formated request who correspond to the date and the day
         $formatedRequests='';
         foreach ($requests as $request){
-            if($request['date']==$date->format('Y-m-d')&&$request['idUser']==$user){
-                $formatedRequests.="<div>".$request['idVac']."</div>";
+            if($request['date']==$date->format('Y-m-d')&&$request['idUser']==$user){//Display the vacation
+                $infoVac=Vacation::getVacationById($request['idVac']);
+                $vacation=new Vacation($request['idVac'],$infoVac['label'],$infoVac['name']);
+
+                $formatedRequests.="<div>".$vacation->getLabel()."</div>";
             }
         }
         if (strlen($formatedRequests)>0){

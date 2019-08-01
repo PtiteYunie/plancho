@@ -2,7 +2,7 @@
 require_once "php/classes/classIncluder.php";
 
 if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {
-
+    header('Location:index.php');
     exit();
 }
 
@@ -43,7 +43,6 @@ if (isset($_GET['m']) && isset($_GET['Y'])) {
                 $calendar->displayCalendar();
             }
             else{
-                echo "Calendrier";
                 $calendar->displayCalendar();
             }
 

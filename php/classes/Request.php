@@ -24,38 +24,50 @@ class Request
         return $add->execute([$this->idUser, $this->date, $this->idVac]);
     }
 
-    static function getAllRequestsByDate($dateStart, $dateEnd){
+    static function getAllRequestsByDate($dateStart, $dateEnd)
+    {
         $database = Database::getDatabaseConnection();
 
         $get = $database->prepare("SELECT * FROM request WHERE date BETWEEN ? AND ?");
-        if ($get->execute(array($dateStart, $dateEnd))){
+        if ($get->execute([$dateStart, $dateEnd])) {
             return $get->fetchAll(PDO::FETCH_ASSOC);
-        }
-        else{
+        } else {
             return false;
         }
     }
 
-    static function deleteRequest($id){
+    static function deleteRequest($id)
+    {
         $database = Database::getDatabaseConnection();
 
         $delete = $database->prepare("DELETE FROM request WHERE id = ?");
-        if ($delete->execute(array($id))){
+        if ($delete->execute([$id])) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
-    static function getAllRequestByUser($id){
+    static function getAllRequestByUser($id)
+    {
         $database = Database::getDatabaseConnection();
 
         $get = $database->prepare('SELECT * FROM request WHERE idUser = ?');
-        if ($get->execute(array($id))){
+        if ($get->execute([$id])) {
             return $get->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return false;
         }
-        else {
+    }
+
+    static function checkRequestExistance($idUser, $date, $idVac)
+    {
+        $database = Database::getDatabaseConnection();
+
+        $get = $database->prepare('SELECT * FROM request WHERE idUser = ? AND date = ? AND idVac = ?');
+        if ($get->execute([$idUser,$date,$idVac])) {
+            return $get->fetch(PDO::FETCH_ASSOC);
+        } else {
             return false;
         }
     }

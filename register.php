@@ -5,7 +5,7 @@
  * Date: 03/04/2019
  * Time: 14:50
  */
-
+$actualDir=__DIR__;
 include_once("php/classes/classIncluder.php");
 if (isset($_POST['reg_password']) && $_POST['reg_verifPassword'] != NULL){
     $username = $_POST['reg_firstName'] . "." . $_POST['reg_lastName'];

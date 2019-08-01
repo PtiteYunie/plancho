@@ -1,10 +1,12 @@
 <?php
+
 /**
 Accueil du panel d'administration
  * Validation des utilisateurs
  * Modification des vacations
  * Ajout d'interdits
  */
+$actualDir=__DIR__;
 require_once("../php/classes/classIncluder.php");
 
 ?>

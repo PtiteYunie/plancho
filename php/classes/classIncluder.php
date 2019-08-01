@@ -9,3 +9,6 @@ require_once("Planning.php");
 require_once("Calendar.php");
 require_once("Vacation.php");
 require_once("Request.php");
+
+$dirExplode=explode("\\",$actualDir);
+$dir=end($dirExplode);

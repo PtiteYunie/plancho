@@ -11,6 +11,8 @@ class Vacation
     private $id;
     private $label;
     private $name;
+    private $color;
+    private $application;
 
     public function __construct($id = null, $label = null, $name = null){
         $this->setId($id);
@@ -21,10 +23,14 @@ class Vacation
     public function setId($id){ $this->id = $id; }
     public function setLabel($label){ $this->label = $label; }
     public function setName($name){ $this->name = $name; }
+    public function setColor($color){ $this->color = $color;}
+    public function setApplication($application){ $this->application = $application; }
 
     public function getId(){ return $this->id; }
     public function getLabel(){ return $this->label; }
     public function getName(){ return $this->name; }
+    public function getColor(){ return $this->color; }
+    public function getApplication(){ return $this->application; }
 
     public function addVacation(){
         $database = Database::getDatabaseConnection();

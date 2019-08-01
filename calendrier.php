@@ -1,4 +1,5 @@
 <?php
+$actualDir=__DIR__;
 require_once "php/classes/classIncluder.php";
 
 if (!isset($_SESSION['isConnected']) || !$_SESSION['isConnected'] == true) {

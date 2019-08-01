@@ -1,5 +1,6 @@
 <?php
-session_start();
+$actualDir=__DIR__;
+require_once "php/classes/classIncluder.php";
 ?>
 
 <!DOCTYPE html>

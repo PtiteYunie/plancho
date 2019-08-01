@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 0){
 ?>
     <!-- S'il est connecté -->
@@ -26,7 +27,7 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SES
     </nav>
 
 <?php
-} else if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 1 && getcwd() != "/Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/admin") {
+} else if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 1 && $dir!='admin') {
     ?>
     <!-- S'il est administrateur et hors du dossier admin -->
     <nav class="uk-navbar-container" uk-navbar>
@@ -54,14 +55,13 @@ if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SES
     </nav>
 
 <?php
-} else if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 1 && getcwd() == "/Applications/XAMPP/xamppfiles/htdocs/PLC/plancho/admin") {
+} else if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true && $_SESSION['isAdm'] == 1 && $dir=='admin') {
     ?>
     <!-- S'il est administrateur et dans le dossier admin -->
     <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
                 <li uk-tooltip="title: Retournez à l'accueil"><a href="../index.php">Accueil</a></li>
-                <li uk-tooltip="title: Accédez au planning"><a href="../calendrier.php">Planning</a></li>
                 <li uk-tooltip="title: Accédez au planning"><a href="../admin/index.php">Panel Administrateur</a></li>
                 <li uk-tooltip="title: Accédez au planning"><a href="../admin/usersAdmin.php">Gestion des utilisateurs</a></li>
                 <li uk-tooltip="title: Accédez au planning"><a href="../admin/vacationsAdmin.php">Gestion des vacations</a></li>

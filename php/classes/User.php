@@ -223,6 +223,7 @@ class User
     public function createSession()
     {
         unset($this->password);
+        $_SESSION['id']= $this->id;
         $_SESSION['username'] = $this->username;
         $_SESSION['firstName'] = $this->firstName;
         $_SESSION['lastName'] = $this->lastName;

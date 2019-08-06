@@ -1,4 +1,5 @@
 <?php
+$actualDir=__DIR__;
 require_once("php/classes/classIncluder.php");
 if (isset($_POST['con_password']) && $_POST['con_email'] && $_POST['con_password'] !== NULL){
     $connUser = new User();

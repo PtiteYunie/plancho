@@ -14,10 +14,12 @@ class Vacation
     private $color;
     private $application;
 
-    public function __construct($id = null, $label = null, $name = null){
+    public function __construct($id = null, $label = null, $name = null, $color=null, $application=null){
         $this->setId($id);
         $this->setLabel($label);
         $this->setName($name);
+        $this->setColor($color);
+        $this->setApplication($application);
     }
 
     public function setId($id){ $this->id = $id; }
@@ -74,6 +76,30 @@ class Vacation
         $get = $database->prepare("UPDATE vacation SET name = ? WHERE id = ?");
 
         if($get->execute(array($name, $id))){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    static function editColor($id, $color){
+        $database = Database::getDatabaseConnection();
+
+        $get = $database->prepare("UPDATE vacation SET color = ? WHERE id = ?");
+
+        if($get->execute(array($color, $id))){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    static function editApplication($id, $application){
+        $database = Database::getDatabaseConnection();
+
+        $get = $database->prepare("UPDATE vacation SET application = ? WHERE id = ?");
+
+        if($get->execute(array($application, $id))){
             return true;
         }
         else {
